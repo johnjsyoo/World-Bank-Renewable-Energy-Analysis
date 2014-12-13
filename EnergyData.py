@@ -30,9 +30,9 @@ renewableProd = wbdata.get_data("EG.ELC.RNEW.KH", data_date=data_date, pandas = 
 electricityProd = wbdata.get_data("EG.ELC.PROD.KH", data_date=data_date, pandas = True)[44:]
 
 # Convert the time-series data into a Data Frame
-gdpDF = pandas.DataFrame(gdp)
-renewableProdDF = pandas.DataFrame(renewableProd)
-electricityProdDF = pandas.DataFrame(electricityProd)
+gdpDF = pd.DataFrame(gdp)
+renewableProdDF = pd.DataFrame(renewableProd)
+electricityProdDF = pd.DataFrame(electricityProd)
 
 energyDF = gdpDF.join(renewableProdDF, lsuffix="GDP",rsuffix="Renewable_kWh")
 energyDF = energyDF.join(electricityProdDF)
